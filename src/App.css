@@ -1,0 +1,83 @@
+html, body {  /* header, footer 공백없이 body 붙이기 위함*/
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+nav {
+  margin: 0 auto;
+  border-bottom: 1px solid;
+}
+
+nav #kategorie {
+  margin-left: 35px;
+  text-align: center;
+}
+
+nav #login {
+  float: right;
+}
+
+nav ul li {
+  padding: 27px;
+  display: inline-block;
+  font-size: 13px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  color:rgba(0,0,0,1);
+}
+
+.newjeans {
+  background-image : url('./img/newjeans.png');
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  height: 720px;
+}
+
+.model {
+  height: 720px;
+  display: flex;
+}
+
+.model1 {
+  width: 850px;
+  background-image : url('./img/main3.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.model2 {
+  width: 980px;
+  background-image : url('./img/main4.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+footer {
+  height: 65px;
+  background: black;
+  color: rgb(163, 163, 163);
+  font-size: 8px;
+}
+
+footer ul {
+  margin-left: 20px;
+  list-style: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
