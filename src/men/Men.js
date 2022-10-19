@@ -20,6 +20,7 @@ function Men() {
                 men.map(function(a,i){
                     return (
                         <div className="product">
+                            <img src={'https://github.com/youngeunkk/shoppingmore-project/blob/main/src/men/img/'+ i +'.jpg?raw=true'} alt="MenProduct" width="80%" />
                             <h2>{men[i].title}</h2>
                             <p>{men[i].price}</p>
                         </div>
