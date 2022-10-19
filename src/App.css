@@ -7,32 +7,33 @@ body {
   background-color: whitesmoke;
 }
 
-nav {
+.nav {
   margin: 0 auto;
-  
+  border-bottom: 2px dotted;
 }
 
-nav #kategorie {
+
+.nav #kategorie {
   margin-left: 35px;
   text-align: center;
 }
 
-nav #login {
+.nav #login {
   float: right;
 }
 
-nav ul li {
+.nav ul li {
   padding: 27px;
   display: inline-block;
   font-size: 13px;
 }
 
-nav ul li a {
+.nav ul li a {
   text-decoration: none;
   color: inherit;
 }
 
-nav ul li a:hover {
+.nav ul li a:hover {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
   color:rgba(0,0,0,1);
 }
@@ -80,17 +81,18 @@ footer ul {
 
 .men {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .product { /* 공통적으로 사용할 div product 클래스명*/
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   padding: 3rem;
   margin: 3rem;
   text-align: center;
 }
 
-* {
+* { /*footer 윗여백 없애기 위함*/
   margin: 0;
   padding: 0;
 }

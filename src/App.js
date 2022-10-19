@@ -8,7 +8,7 @@ import Newproduct from './22fw/Newproduct.js'
 
 function Navbar() {
   return (
-    <nav>
+    <div className="nav">
       <ul id="kategorie">
         <li><Link to="/">HOME</Link></li>
         <li><Link to="/men">MEN</Link></li>
@@ -22,7 +22,7 @@ function Navbar() {
           <li>LOGIN</li>
       </ul>
       </ul>
-    </nav>
+    </div>
   )
 }
 function Capital() {
