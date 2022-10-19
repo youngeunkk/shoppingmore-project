@@ -9,7 +9,7 @@ body {
 
 nav {
   margin: 0 auto;
-  border-bottom: 1px solid;
+  
 }
 
 nav #kategorie {
@@ -38,7 +38,7 @@ nav ul li a:hover {
 }
 
 .newjeans {
-  background-image : url('./img/newjeans.png');
+  background-image : url('./mainpageimg/newjeans.png');
   background-size: cover;
   background-position: center center;
   display: flex;
@@ -60,7 +60,7 @@ nav ul li a:hover {
 }
 
 .model2 {
-  width: 980px;
+  width: 1200px;
   background-image : url('./img/main4.jpg');
   background-size: cover;
   background-position: center center;
@@ -77,6 +77,19 @@ footer ul {
   margin-left: 20px;
   list-style: none;
 }
+
+.men {
+  display: flex;
+}
+
+.product { /* 공통적으로 사용할 div product 클래스명*/
+  width: 300px;
+  height: 300px;
+  padding: 3rem;
+  margin: 3rem;
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;

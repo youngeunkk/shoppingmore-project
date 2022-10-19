@@ -1,15 +1,21 @@
 import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
+import Men from './men/Men.js'
+import Women from './women/Women.js'
+import Cap from './cap/Cap.js'
+import Shoes from './shoes/Shoes.js'
+import Newproduct from './22fw/Newproduct.js'
 
 function Navbar() {
   return (
     <nav>
       <ul id="kategorie">
-        <li><a href="#">HOME</a></li>
-        <li>MEN</li>
-        <li>WOMEN</li>
-        <li>SHOES</li>
-        <li>CAP</li>
-        <li>22FW</li>
+        <li><Link to="/">HOME</Link></li>
+        <li><Link to="/men">MEN</Link></li>
+        <li><Link to="/women">WOMEN</Link></li>
+        <li><Link to="/shoes">SHOES</Link></li>
+        <li><Link to="/cap">CAP</Link></li>
+        <li><Link to="/22fw">22FW</Link></li>
 
         <ul id="login">
           <li>장바구니</li>
@@ -19,7 +25,6 @@ function Navbar() {
     </nav>
   )
 }
-
 function Capital() {
   return (
     <>
@@ -36,14 +41,25 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Capital/>
-      <footer>
-        <ul>
-          <li>대표: 김영은</li>
-          <li>문의: 010-9924-7651</li>
-          <li>계좌번호: 농협 351-1024-3710-03</li>
-        </ul>
-      </footer>
+      <Routes>
+        <Route path="/" element={
+        <>
+          <Capital/>
+          <footer>
+            <ul>
+              <li>대표: 김영은</li>
+              <li>문의: 010-9924-7651</li>
+              <li>계좌번호: 농협 351-1024-3710-03</li>
+            </ul>
+          </footer>
+        </>
+        } />
+        <Route path="/men" element={ <Men/>} />
+        <Route path="/women" element={ <Women/>} />
+        <Route path="/shoes" element={ <Shoes/>} />
+        <Route path="/cap" element={ <Cap/>} />
+        <Route path="/22fw" element={ <Newproduct/>} />
+      </Routes>
     </div>
   );
 }
