@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import Men from './men/Men.js'
+import Mendetail from './men/Mendetail.js'
 import Women from './women/Women.js'
 import Cap from './cap/Cap.js'
 import Shoes from './shoes/Shoes.js'
@@ -59,6 +60,8 @@ function App() {
         <Route path="/shoes" element={ <Shoes/>} />
         <Route path="/cap" element={ <Cap/>} />
         <Route path="/22fw" element={ <Newproduct/>} />
+      
+        <Route path="men/detail/:id" element={<Mendetail/>}/>
       </Routes>
     </div>
   );
