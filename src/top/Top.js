@@ -1,24 +1,24 @@
 import { useState } from 'react';
-import data from './Mendata.js';
+import data from './Topdata.js';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
-function Men() {
+function Top() {
 
-    let [men] = useState(data);
+    let [top] = useState(data);
 
     return (
         <>
-        <div className='men'>
+        <div className='top'>
             {
-                men.map(function(a,i){
+                top.map(function(a,i){
                     return (
                         <div className="product" key={i} >
                             <Link to={'detail/' + i} style={{textDecoration: 'none'}}>
                             <img src={'https://github.com/youngeunkk/shoppingmore-project/blob/main/src/men/img/' + i +'.jpg?raw=true'} 
-                                alt="MenProduct" width="80%" />
-                            <h3>{men[i].title}</h3>
-                            <p>{men[i].price}</p>
+                                alt="TopProduct" width="80%" />
+                            <h3>{top[i].title}</h3>
+                            <p>{top[i].price}</p>
                             </Link>
                         </div>
                     )
@@ -29,4 +29,4 @@ function Men() {
     )
 }
 
-export default Men;
+export default Top;

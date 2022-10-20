@@ -87,7 +87,7 @@ footer ul {
   list-style: none;
 }
 
-.men {
+.top {
   display: flex;
   flex-wrap: wrap; /* 브라우저 사이즈가 줄어들면 자동으로 여려 줄 표시*/
 }
@@ -114,6 +114,16 @@ h3, p {
 .detail { /*상품 상세정보 스타일*/
   text-align: center;
   margin-top: 25px;
+}
+
+.detail button {
+  background-color: hotpink;
+  width: 150px;
+  height: 50px;
+  color:black;
+  font-size: 19px;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 

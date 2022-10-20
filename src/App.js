@@ -1,10 +1,9 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
-import Men from './men/Men.js'
-import Mendetail from './men/Mendetail.js'
-import Women from './women/Women.js'
+import Top from './top/Top.js'
+import Topdetail from './top/Topdetail.js'
 import Cap from './cap/Cap.js'
-import Shoes from './shoes/Shoes.js'
+import Bottom from './bottom/Bottom.js'
 import Newproduct from './22fw/Newproduct.js'
 
 function Navbar() {
@@ -12,9 +11,8 @@ function Navbar() {
     <div className="nav">
       <ul id="kategorie">
         <li><Link to="/">HOME</Link></li>
-        <li><Link to="/men">MEN</Link></li>
-        <li><Link to="/women">WOMEN</Link></li>
-        <li><Link to="/shoes">SHOES</Link></li>
+        <li><Link to="/top">TOP</Link></li>
+        <li><Link to="/bottom">BOTTOM</Link></li>
         <li><Link to="/cap">CAP</Link></li>
         <li><Link to="/22fw">22FW</Link></li>
 
@@ -55,13 +53,12 @@ function App() {
           </footer>
         </>
         } />
-        <Route path="/men" element={ <Men/>} />
-        <Route path="/women" element={ <Women/>} />
-        <Route path="/shoes" element={ <Shoes/>} />
+        <Route path="/top" element={ <Top/>} />
+        <Route path="/bottom" element={ <Bottom/>} />
         <Route path="/cap" element={ <Cap/>} />
         <Route path="/22fw" element={ <Newproduct/>} />
       
-        <Route path="men/detail/:id" element={<Mendetail/>}/>
+        <Route path="top/detail/:id" element={<Topdetail/>}/>
       </Routes>
     </div>
   );
