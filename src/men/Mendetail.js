@@ -5,7 +5,6 @@ import { useState } from 'react';
 function Mendetail() {
 
     const {id} = useParams();
-    console.log(id);
 
     const [men] = useState(data);
 
@@ -15,6 +14,7 @@ function Mendetail() {
                 alt="MenProduct" width="30%" />
             <h3>{men[id].title}</h3>
             <h3>{men[id].price}</h3>
+            <img src={'https://image.musinsa.com/images/prd_img/2022092218100400000079174.jpg'} alt="detail" width="40%"/>
         </div>
     )
 }
