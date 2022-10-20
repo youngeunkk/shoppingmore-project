@@ -1,9 +1,9 @@
-function Shoes() {
+function Bottom() {
     return (
-        <div className="shoes">
+        <div className="bottom">
             <h2>신발</h2>
         </div>
     )
 }
 
-export default Shoes;
+export default Bottom;
