@@ -115,9 +115,10 @@ h3, p {
   text-align: center;
   margin-top: 25px;
 }
-
-.detail button {
-  background-color: hotpink;
+.detail #buy {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: violet;
   width: 150px;
   height: 50px;
   color:black;
@@ -125,6 +126,30 @@ h3, p {
   font-weight: bolder;
   cursor: pointer;
 }
+
+.detail #cart {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: aqua;
+  width: 100px;
+  height: 50px;
+  color:black;
+  font-size: 19px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.selectedLists {
+  margin-top: 10px;
+  border-bottom: 1px double;
+}
+
+.sizechoice {
+  margin-right: 5px;
+}
+
+
 
 
 * { /*footer 윗여백 없애기 위함*/
