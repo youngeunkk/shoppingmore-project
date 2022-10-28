@@ -12,6 +12,8 @@ function Topdetail() {
     const optionLists = ["S", "M", "L", "XL"];
     const [selectedLists, setSelectedLists] = useState([]);
 
+    const [count, setCount] = useState(1);
+
     const handleSelect = e => {
         let copy = [...selectedLists];
         copy.push(e.target.value);
@@ -32,15 +34,21 @@ function Topdetail() {
                     ))}
                 </select>
                 <br></br>
-                {selectedLists.map(function(e,i){
+                {selectedLists.slice(0, 4).map(function(e,i){
                     return (
                         <div className="selectedLists" key={i}>
-                            {selectedLists[i]} size - {top[id].title} {top[id].price} 수량 : 1
-                            <button type='button'>➕</button> 
-                            <button type='button'>❌</button>
+                            {selectedLists[i]} size - {top[id].title} {top[id].price} 수량 : {count}
+                            <button type='button' name="add" 
+                            onClick={()=>{setCount(count+1)}}>➕</button>&nbsp;
+
+                            <button type='button' name="sub">➖</button>&nbsp;
+
+                            <button type='button' id="delete">❌</button>
                         </div>
+                    
                     )
-                })}    
+                })}
+                    
             <button type="button" id='buy'>바로 구매하기</button>
             <button type="button" id='cart'>장바구니</button>
             <br></br>
