@@ -12,13 +12,15 @@ function Topdetail() {
     const optionLists = ["S", "M", "L", "XL"];
     const [selectedLists, setSelectedLists] = useState([]);
 
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState([1,1,1,1]);
 
     const handleSelect = e => {
         let copy = [...selectedLists];
         copy.push(e.target.value);
         setSelectedLists(copy);
     }
+
+    
 
     return (
         <div className='detail'>
@@ -34,18 +36,36 @@ function Topdetail() {
                     ))}
                 </select>
                 <br></br>
-                {selectedLists.slice(0, 4).map(function(e,i){
+                {selectedLists.slice(0,4).map(function(a,i) {
+
+                    let set = new Set(selectedLists);
+                    let newSelectedLists = [...set];
+
                     return (
+
                         <div className="selectedLists" key={i}>
-                            {selectedLists[i]} size - {top[id].title} {top[id].price} 수량 : {count}
+                            {newSelectedLists[i]} size - {top[id].title} {Number(top[id].price)*Number(count[i])} 수량 : {count[i]}
                             <button type='button' name="add" 
-                            onClick={()=>{setCount(count+1)}}>➕</button>&nbsp;
+                            onClick={()=>{
+                                let copy = [...count];
+                                copy[i]++;
+                                setCount(copy);
+                            }}>➕</button>&nbsp;
 
-                            <button type='button' name="sub">➖</button>&nbsp;
+                            <button type='button' name="sub"
+                            onClick={()=>{
+                                let copy = [...count];
+                                copy[i] === 1 ? alert('최소 주문수량은 1개입니다.') :
+                                copy[i]--;
+                                setCount(copy);}}>➖</button>&nbsp;
 
-                            <button type='button' id="delete">❌</button>
+                            <button type='button' name="delete"
+                            onClick={()=>{
+                                let copy = [...newSelectedLists];
+                                copy.splice(i, 1);
+                                setSelectedLists(copy);
+                            }}>❌</button>
                         </div>
-                    
                     )
                 })}
                     
