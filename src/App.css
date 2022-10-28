@@ -140,7 +140,10 @@ h3, p {
   cursor: pointer;
 }
 
+
 .selectedLists {
+  margin: 0 auto;
+  width: 300px;
   margin-top: 10px;
   border-bottom: 1px double;
 }
