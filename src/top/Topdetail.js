@@ -14,9 +14,11 @@ function Topdetail() {
 
     const [count, setCount] = useState([1,1,1,1]);
 
-    const handleSelect = e => {
+    const handleSelect = (e, i) => {
         let copy = [...selectedLists];
+        let newCount = [...count];
         copy.push(e.target.value);
+        newCount[i] = 1;
         setSelectedLists(copy);
     }
 
@@ -61,8 +63,17 @@ function Topdetail() {
 
                             <button type='button' name="delete"
                             onClick={()=>{
+
                                 let copy = [...newSelectedLists];
+                                let newCount = [...count];
                                 copy.splice(i, 1);
+
+                                newCount[i] = newCount[i+1];
+                                newCount[i+1] = newCount[i+2];
+                                newCount[i+2] = newCount[i+3];
+
+                                setCount(newCount);
+
                                 setSelectedLists(copy);
                             }}>❌</button>
                         </div>
