@@ -37,6 +37,7 @@ function Capital() {
 }
 
 function App() {
+
   return (
     <div className="App">
       <Navbar/>
