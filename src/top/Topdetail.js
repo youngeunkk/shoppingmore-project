@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import data from './Topdata.js';
 import { useState } from 'react';
 import standardSize from '../size.png';
@@ -6,6 +6,8 @@ import standardSize from '../size.png';
 function Topdetail() {
 
     const {id} = useParams();
+
+    const navigate = useNavigate();
 
     const [top] = useState(data);
 
@@ -21,10 +23,30 @@ function Topdetail() {
         newCount[i] = 1;
         setSelectedLists(copy);
     }
+    
+
+    const onClickCart = () => {
+        let copy = [...selectedLists]
+        let newCount = [...count];
+        let set = new Set(copy);
+        let newSet = [...set];
+        let optionDataLists = [];
+
+        for (let i =0; i < newSet.length; i++) {
+            optionDataLists.push({
+                'size' : copy[i],
+                'title' : top[id].title,
+                'price' : Number(top[id].price)*Number(newCount[i]),
+                'count' : newCount[i],
+            })
+        }
+        navigate('/cart')
+    }
 
     
 
     return (
+        
         <div className='detail'>
             <img src={'https://github.com/youngeunkk/shoppingmore-project/blob/main/src/top/img/' + id +'.jpg?raw=true'} 
                 alt="TopProduct" width="30%" />
@@ -38,6 +60,7 @@ function Topdetail() {
                     ))}
                 </select>
                 <br></br>
+
                 {selectedLists.slice(0,4).map(function(a,i) {
 
                     let set = new Set(selectedLists);
@@ -46,7 +69,10 @@ function Topdetail() {
                     return (
 
                         <div className="selectedLists" key={i}>
-                            {newSelectedLists[i]} size - {top[id].title} {Number(top[id].price)*Number(count[i])} 수량 : {count[i]}
+                            
+                            {newSelectedLists[i]} size - {top[id].title} {Number(top[id].price)*Number(count[i])} 
+                            수량 : {count[i]} 
+                            
                             <button type='button' name="add" 
                             onClick={()=>{
                                 let copy = [...count];
@@ -79,9 +105,9 @@ function Topdetail() {
                         </div>
                     )
                 })}
-                    
-            <button type="button" id='buy'>바로 구매하기</button>
-            <button type="button" id='cart'>장바구니</button>
+            
+            <button type="submit" id='buy'>바로 구매하기</button>
+            <button type="button" id='cart' onClick={onClickCart}>장바구니</button>
             <br></br>
             <img src={'https://github.com/youngeunkk/shoppingmore-project/blob/main/src/top/detailimg/' + id +'.jpg?raw=true'} alt="detail" width="40%"/>
             <br></br>

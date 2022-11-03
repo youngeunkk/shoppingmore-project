@@ -1,5 +1,6 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
+import Cart from './Cart.js';
 import Top from './top/Top.js'
 import Topdetail from './top/Topdetail.js'
 import Cap from './cap/Cap.js'
@@ -17,7 +18,7 @@ function Navbar() {
         <li><Link to="/22fw">22FW</Link></li>
 
         <ul id="login">
-          <li>장바구니</li>
+          <li><Link to="/cart">장바구니</Link></li>
           <li>LOGIN</li>
       </ul>
       </ul>
@@ -54,11 +55,11 @@ function App() {
           </footer>
         </>
         } />
-        <Route path="/top" element={ <Top/>} />
         <Route path="/bottom" element={ <Bottom/>} />
         <Route path="/cap" element={ <Cap/>} />
         <Route path="/22fw" element={ <Newproduct/>} />
-      
+        <Route path="/Cart" element={ <Cart/>} />
+        <Route path="/top" element={ <Top/>} />
         <Route path="top/detail/:id" element={<Topdetail/>}/>
       </Routes>
     </div>
