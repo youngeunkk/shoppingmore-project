@@ -3,15 +3,19 @@ import data from './Topdata.js';
 import { useState } from 'react';
 import standardSize from '../size.png';
 
-function Topdetail() {
+function Topdetail(props) {
 
-    const {id} = useParams();
+    let [optionDataLists, setOptionDataLists] = useState(props.optionDataLists);
 
-    const navigate = useNavigate();
+    const {id} = useParams();   
+ 
+    const navigate = useNavigate();  
 
-    const [top] = useState(data);
+    const [top] = useState(data);  
 
     const optionLists = ["S", "M", "L", "XL"];
+
+
     const [selectedLists, setSelectedLists] = useState([]);
 
     const [count, setCount] = useState([1,1,1,1]);
@@ -30,7 +34,6 @@ function Topdetail() {
         let newCount = [...count];
         let set = new Set(copy);
         let newSet = [...set];
-        let optionDataLists = [];
 
         for (let i =0; i < newSet.length; i++) {
             optionDataLists.push({
@@ -40,6 +43,9 @@ function Topdetail() {
                 'count' : newCount[i],
             })
         }
+
+        setOptionDataLists(optionDataLists);
+        
         navigate('/cart')
     }
 
@@ -117,3 +123,5 @@ function Topdetail() {
 }
 
 export default Topdetail;
+
+export let optionDataLists;

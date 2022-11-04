@@ -1,11 +1,12 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
-import Cart from './Cart.js';
 import Top from './top/Top.js'
 import Topdetail from './top/Topdetail.js'
 import Cap from './cap/Cap.js'
 import Bottom from './bottom/Bottom.js'
 import Newproduct from './22fw/Newproduct.js'
+import { useState } from 'react';
+import Cart from './Cart';
 
 function Navbar() {
   return (
@@ -38,6 +39,8 @@ function Capital() {
 }
 
 function App() {
+ 
+  const [optionDataLists] = useState([]);
 
   return (
     <div className="App">
@@ -58,9 +61,9 @@ function App() {
         <Route path="/bottom" element={ <Bottom/>} />
         <Route path="/cap" element={ <Cap/>} />
         <Route path="/22fw" element={ <Newproduct/>} />
-        <Route path="/Cart" element={ <Cart/>} />
+        <Route path="/Cart" element={ <Cart optionDataLists={optionDataLists}/>} />
         <Route path="/top" element={ <Top/>} />
-        <Route path="top/detail/:id" element={<Topdetail/>}/>
+        <Route path="top/detail/:id" element={<Topdetail optionDataLists={optionDataLists}/>}/>
       </Routes>
     </div>
   );
