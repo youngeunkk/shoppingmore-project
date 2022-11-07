@@ -40,13 +40,13 @@ function Topdetail(props) {
                 'size' : copy[i],
                 'title' : top[id].title,
                 'price' : Number(top[id].price)*Number(newCount[i]),
-                'count' : newCount[i],
+                'count' : newCount[i]
             })
         }
 
         setOptionDataLists(optionDataLists);
-        
-        navigate('/cart')
+
+        optionDataLists.length === 0 ? alert('옵션을 선택해주세요!') : navigate('/cart')
     }
 
     
