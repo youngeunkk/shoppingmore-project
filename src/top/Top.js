@@ -16,7 +16,7 @@ function Top() {
                         <div className="product" key={i} >
                             <Link to={'detail/' + i} style={{textDecoration: 'none'}}>
                             <img src={'https://github.com/youngeunkk/shoppingmore-project/blob/main/src/top/img/' + i +'.jpg?raw=true'} 
-                                alt="TopProduct" width="100%" />
+                                alt="TopProduct" width="80%" />
                             <h3>{top[i].title}</h3>
                             <p>{top[i].price}</p>
                             </Link>

@@ -17,7 +17,7 @@ body {
 
 .nav {
   margin: 0 auto;
-  border-bottom: 2px dotted;
+  border-bottom: 1px solid;
 }
 
 
@@ -115,7 +115,7 @@ h3, p {
   text-align: center;
   margin-top: 25px;
 }
-.detail #buy {
+#buy {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: violet;
@@ -150,6 +150,28 @@ h3, p {
 
 .sizechoice {
   margin-right: 5px;
+}
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  border: 3px black solid;
+}
+
+th, td {
+  font-size: 25px;
+  padding: 15px;
+}
+
+table button {
+  margin-left: 5px;
+}
+
+.buyarea {
+  width: 300px;
+  margin-top: 20px;
+  left: 42%;
+  position: absolute;
 }
 
 * { /*footer 윗여백 없애기 위함*/

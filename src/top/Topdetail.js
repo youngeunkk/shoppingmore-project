@@ -112,7 +112,7 @@ function Topdetail(props) {
                     )
                 })}
             
-            <button type="submit" id='buy'>바로 구매하기</button>
+            <button type="button" id='buy'>바로 구매하기</button>
             <button type="button" id='cart' onClick={onClickCart}>장바구니</button>
             <br></br>
             <img src={'https://github.com/youngeunkk/shoppingmore-project/blob/main/src/top/detailimg/' + id +'.jpg?raw=true'} alt="detail" width="40%"/>

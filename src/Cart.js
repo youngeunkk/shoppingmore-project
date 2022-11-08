@@ -2,6 +2,14 @@ function Cart(props) {
 
   let [optionDataLists] = [props.optionDataLists];
 
+  const handleBuy = () => {
+    let sum = 0;
+    for (let i = 0; i < optionDataLists.length; i++) {
+      sum += optionDataLists[i].price;
+    }
+    console.log(sum)
+  }
+
   return (
     <div className="cart">
       <table>
@@ -10,6 +18,7 @@ function Cart(props) {
             <th>번호</th>
             <th>상품명</th>
             <th>사이즈</th>
+            <th>가격</th>
             <th>수량</th>
           </tr>
         </thead>
@@ -31,6 +40,9 @@ function Cart(props) {
             })}
         </tbody>
       </table>
+      <div className="buyarea">
+          <button type="button" id="buy" onClick={handleBuy}>바로 구매하기</button>
+        </div>
     </div>
   )
 }
