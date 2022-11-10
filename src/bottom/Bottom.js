@@ -1,6 +1,6 @@
 function Bottom() {
     return (
-        <div>he</div>
+        <div className="bottom"></div>
     )
 }
 

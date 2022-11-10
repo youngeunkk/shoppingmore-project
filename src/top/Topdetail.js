@@ -7,6 +7,8 @@ function Topdetail(props) {
 
     let [optionDataLists, setOptionDataLists] = useState(props.optionDataLists);
 
+    let [buyDataLists, setBuyDataLists] = useState([]);
+
     const {id} = useParams();   
  
     const navigate = useNavigate();  
@@ -30,7 +32,7 @@ function Topdetail(props) {
     
 
     const onClickCart = () => {
-        let copy = [...selectedLists]
+        let copy = [...selectedLists];
         let newCount = [...count];
         let set = new Set(copy);
         let newSet = [...set];
@@ -47,6 +49,34 @@ function Topdetail(props) {
         setOptionDataLists(optionDataLists);
 
         optionDataLists.length === 0 ? alert('옵션을 선택해주세요!') : navigate('/cart')
+    }
+
+    const onClickBuy = () => {
+
+        let copy = [...selectedLists];
+        let newCount = [...count];
+        let set = new Set(copy);
+        let newSet = [...set];
+        let newBuyData = [...buyDataLists];
+        
+        for (let i =0; i < newSet.length; i++) {
+            newBuyData.push({
+                'size' : copy[i],
+                'title' : top[id].title,
+                'price' : Number(top[id].price)*Number(newCount[i]),
+                'count' : newCount[i]
+            })
+        }
+
+        setBuyDataLists(newBuyData);
+
+        let sum = 0;
+
+        for (let i = 0; i < newBuyData.length; i++) {
+            sum += newBuyData[i].price;
+          } 
+          buyDataLists.length ===  0 ? alert('옵션을 선택해주세요!') : console.log(sum);
+
     }
 
     
@@ -112,7 +142,7 @@ function Topdetail(props) {
                     )
                 })}
             
-            <button type="button" id='buy'>바로 구매하기</button>
+            <button type="button" id='buy'  onClick={onClickBuy}>바로 구매하기</button>
             <button type="button" id='cart' onClick={onClickCart}>장바구니</button>
             <br></br>
             <img src={'https://github.com/youngeunkk/shoppingmore-project/blob/main/src/top/detailimg/' + id +'.jpg?raw=true'} alt="detail" width="40%"/>

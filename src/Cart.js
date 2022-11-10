@@ -7,10 +7,11 @@ function Cart(props) {
     for (let i = 0; i < optionDataLists.length; i++) {
       sum += optionDataLists[i].price;
     }
-    console.log(sum)
+    console.log(sum) 
   }
 
   return (
+    
     <div className="cart">
       <table>
         <thead>
@@ -22,13 +23,15 @@ function Cart(props) {
             <th>수량</th>
           </tr>
         </thead>
+      
         <tbody>
 
           {
             optionDataLists.map(function (a, i) {
 
               return (
-                <tr key={i}>
+                             
+                  <tr key={i}>
                   <td>{i + 1}</td>
                   <td>{optionDataLists[i].title}</td>
                   <td>{optionDataLists[i].size}</td>
@@ -39,10 +42,14 @@ function Cart(props) {
               )
             })}
         </tbody>
+        
       </table>
-      <div className="buyarea">
-          <button type="button" id="buy" onClick={handleBuy}>바로 구매하기</button>
+      {
+        optionDataLists.length === 0 ? <></>
+         : <div className="buyarea">
+         <button type="button" id="buy" onClick={handleBuy}>바로 구매하기</button>
         </div>
+      }
     </div>
   )
 }

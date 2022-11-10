@@ -4,7 +4,6 @@ import Top from './top/Top.js'
 import Topdetail from './top/Topdetail.js'
 import Cap from './cap/Cap.js'
 import Bottom from './bottom/Bottom.js'
-import Newproduct from './22fw/Newproduct.js'
 import { useState } from 'react';
 import Cart from './Cart';
 
@@ -16,7 +15,6 @@ function Navbar() {
         <li><Link to="/top">TOP</Link></li>
         <li><Link to="/bottom">BOTTOM</Link></li>
         <li><Link to="/cap">CAP</Link></li>
-        <li><Link to="/22fw">22FW</Link></li>
 
         <ul id="login">
           <li><Link to="/cart">장바구니</Link></li>
@@ -60,7 +58,6 @@ function App() {
         } />
         <Route path="/bottom" element={ <Bottom/>} />
         <Route path="/cap" element={ <Cap/>} />
-        <Route path="/22fw" element={ <Newproduct/>} />
         <Route path="/Cart" element={ <Cart optionDataLists={optionDataLists}/>} />
         <Route path="/top" element={ <Top/>} />
         <Route path="top/detail/:id" element={<Topdetail optionDataLists={optionDataLists}/>}/>
